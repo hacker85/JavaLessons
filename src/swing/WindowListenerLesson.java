@@ -12,8 +12,7 @@ public class WindowListenerLesson {
     static JFrame jFrame = getFrame();
 
     public static void main(String[] args) {
-        JPanel jPanel = new JPanel() {
-        };
+        JPanel jPanel = new JPanel() {};
         jFrame.add(jPanel);
         jFrame.addWindowListener(new WindowAdapter() {
             @Override
