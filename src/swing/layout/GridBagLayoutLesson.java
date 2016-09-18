@@ -1,14 +1,19 @@
-package swing;
+package swing.layout;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class Main {
+/**
+ * Created by max on 9/18/16.
+ */
+public class GridBagLayoutLesson {
     static JFrame jFrame = getFrame();
 
     static JPanel jPanel = new JPanel();
 
     public static void main(String[] args) throws Exception {
         jFrame.add(jPanel);
+        jPanel.setLayout(new GridBagLayout());
     }
 
     static JFrame getFrame() {

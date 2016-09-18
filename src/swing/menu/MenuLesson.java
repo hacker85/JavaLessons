@@ -1,4 +1,4 @@
-package swing;
+package swing.menu;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,19 +15,31 @@ public class MenuLesson {
         JMenu editMenu = new JMenu("Edit");
         jMenuBar.add(fileMenu);
         jMenuBar.add(editMenu);
-        fileMenu.add(new JMenuItem("Open"));
-        fileMenu.add(new JMenuItem("Open As"));
+        fileMenu.add(new JMenuItem("Open", 'O'));
+        fileMenu.add(new JMenuItem("Open As")).setEnabled(false);
         fileMenu.add(new JPopupMenu.Separator());
         fileMenu.add(new JMenuItem("Close"));
 
         editMenu.add(new JMenuItem("Cut"));
+        editMenu.add("copy");
 
         JMenu options = new JMenu("Options");
         options.add(new JMenuItem("one"));
         options.add(new JMenuItem("two"));
         editMenu.add(options);
 
+        editMenu.add(new JCheckBoxMenuItem("check box"));
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        JRadioButtonMenuItem jRadioButtonMenuItem1 = new JRadioButtonMenuItem("one");
+        JRadioButtonMenuItem jRadioButtonMenuItem2 = new JRadioButtonMenuItem("two");
+        buttonGroup.add(jRadioButtonMenuItem1);
+        buttonGroup.add(jRadioButtonMenuItem2);
+        editMenu.add(jRadioButtonMenuItem1);
+        editMenu.add(jRadioButtonMenuItem2);
+
         JMenuItem exit = fileMenu.add(new JMenuItem("exit"));
+        exit.setAccelerator(KeyStroke.getKeyStroke("ctrl Q"));
         exit.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {

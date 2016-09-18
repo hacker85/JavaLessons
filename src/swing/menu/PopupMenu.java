@@ -1,14 +1,22 @@
-package swing;
+package swing.menu;
 
 import javax.swing.*;
 
-public class Main {
+/**
+ * Created by max on 9/18/16.
+ */
+public class PopupMenu {
     static JFrame jFrame = getFrame();
 
     static JPanel jPanel = new JPanel();
 
     public static void main(String[] args) throws Exception {
         jFrame.add(jPanel);
+
+        JPopupMenu jPopupMenu = new JPopupMenu();
+        jPopupMenu.add(new JMenuItem("one"));
+        jPopupMenu.add(new JMenuItem("two"));
+        jPanel.setComponentPopupMenu(jPopupMenu);
     }
 
     static JFrame getFrame() {

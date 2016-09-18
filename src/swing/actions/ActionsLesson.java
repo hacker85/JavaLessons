@@ -1,4 +1,4 @@
-package swing;
+package swing.actions;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,22 +7,16 @@ import java.awt.event.ActionEvent;
 /**
  * Created by husiv on 9/13/16.
  */
-public class KeyStrokeLesson {
+public class ActionsLesson {
     static JFrame jFrame = getFrame();
 
     static JPanel jPanel = new JPanel() {};
 
     public static void main(String[] args) {
         jFrame.add(jPanel);
-        Action action = new ColorAction();
-        JButton button = new JButton(action);
+        JButton button = new JButton(new ColorAction());
         button.setText("submit");
         jPanel.add(button);
-        KeyStroke keyStroke = KeyStroke.getKeyStroke("ctrl B");
-        InputMap inputMap = jPanel.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-        inputMap.put(keyStroke, "changeColor");
-        ActionMap actionMap = jPanel.getActionMap();
-        actionMap.put("changeColor", action);
     }
 
     static class ColorAction extends AbstractAction {

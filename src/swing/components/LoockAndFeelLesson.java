@@ -1,4 +1,4 @@
-package swing;
+package swing.components;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
