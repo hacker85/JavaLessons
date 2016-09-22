@@ -20,9 +20,12 @@ public class DialogBoxLesson {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(jPanel, "this is message", "title", JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showConfirmDialog(jPanel, new JButton("bla"));
-                JOptionPane.showOptionDialog(jPanel, "this is option dialog", "title3", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, new String[]{"one", "two"}, "two");
-                JOptionPane.showInputDialog(jPanel, "this is input dialog");
+                int confirmValue = JOptionPane.showConfirmDialog(jPanel, new JButton("bla"));
+                System.out.println(confirmValue);
+                int optionValue = JOptionPane.showOptionDialog(jPanel, "this is option dialog", "title3", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, new String[]{"one", "two"}, "two");
+                System.out.println(optionValue);
+                String inputvalue = JOptionPane.showInputDialog(jPanel, "this is input dialog");
+                System.out.println(inputvalue);
             }
         });
     }
