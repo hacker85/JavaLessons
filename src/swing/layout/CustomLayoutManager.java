@@ -41,23 +41,7 @@ public class CustomLayoutManager {
             int n = parent.getComponentCount();
             for (int i = 0; i < n; i++) {
                 Component component = parent.getComponent(i);
-                switch (i) {
-                    case 0: {
-                        component.setBounds(0, 0, 100, 40);
-                        break;
-                    }
-                    case 1: {
-                        component.setBounds(100, 40, 100, 40);
-                        break;
-                    }
-                    case 2: {
-                        component.setBounds(200, 80, 100, 40);
-                        break;
-                    }
-                    default: {
-                        component.setBounds(0, 0, 50, 20);
-                    }
-                }
+                component.setBounds(i * 100, i * 40, 100, 40);
             }
         }
     }
