@@ -1,9 +1,9 @@
 package swing;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class Main {
     static JFrame jFrame = getFrame();
@@ -12,24 +12,21 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         jFrame.add(jPanel);
-        JButton jButton = new JButton("show dialog");
+        JButton jButton = new JButton("show file dialog");
         jPanel.add(jButton);
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MyDialog myDialog = new MyDialog();
-                myDialog.setVisible(true);
+                JFileChooser fileChooser = new JFileChooser();
+
+                int i = fileChooser.showDialog(jPanel, "save as");
+                System.out.println(i);
+
+                File file = fileChooser.getSelectedFile();
+                System.out.println(file.getName());
             }
         });
-    }
-
-    static class MyDialog extends JDialog {
-        public MyDialog() {
-            super(jFrame, "Title", true);
-            add(new JTextField(), BorderLayout.NORTH);
-            add(new JButton("button"), BorderLayout.SOUTH);
-            setBounds(500, 500, 250, 150);
-        }
+        jPanel.revalidate();
     }
 
     static JFrame getFrame() {
