@@ -2,8 +2,12 @@ package swing.dialog;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileView;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.File;
 
 /**
@@ -43,6 +47,16 @@ public class FileDialogLesson {
                     }
                 };
                 jFileChooser.setFileFilter(fileFilter);
+                jFileChooser.setFileView(new FileView() {});
+                JTextField jTextField = new JTextField("bla", 50);
+                jFileChooser.add(jTextField, BorderLayout.EAST);
+                jFileChooser.addPropertyChangeListener(new PropertyChangeListener() {
+                    @Override
+                    public void propertyChange(PropertyChangeEvent evt) {
+                        jTextField.setText(evt.getNewValue().toString());
+                        //JOptionPane.showMessageDialog(jPanel, "this is message", "title", JOptionPane.ERROR_MESSAGE);
+                    }
+                });
                 int i = jFileChooser.showDialog(jFrame, "Select");
                 System.out.println(i);
                 File file = jFileChooser.getSelectedFile();
