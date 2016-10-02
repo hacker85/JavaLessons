@@ -1,6 +1,7 @@
 package swing.dialog;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -27,6 +28,21 @@ public class FileDialogLesson {
                 jFileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
                 //jFileChooser.showOpenDialog(jFrame);
                 //jFileChooser.showSaveDialog(jFrame);
+                FileFilter fileFilter = new FileFilter() {
+                    @Override
+                    public boolean accept(File f) {
+                        if(f.getName().endsWith("gif"))
+                            return true;
+                        else
+                            return false;
+                    }
+
+                    @Override
+                    public String getDescription() {
+                        return "Only gif";
+                    }
+                };
+                jFileChooser.setFileFilter(fileFilter);
                 int i = jFileChooser.showDialog(jFrame, "Select");
                 System.out.println(i);
                 File file = jFileChooser.getSelectedFile();
