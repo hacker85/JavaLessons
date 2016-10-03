@@ -8,7 +8,6 @@ import javax.swing.*;
 public class AppletsLesson extends JApplet {
     @Override
     public void init() {
-        add(new JButton("submit"));
-        System.out.println(getParameter("font"));
+        add(new JButton(getParameter("buttonName")));
     }
 }
