@@ -9,5 +9,6 @@ public class AppletsLesson extends JApplet {
     @Override
     public void init() {
         add(new JButton("submit"));
+        System.out.println(getParameter("font"));
     }
 }
