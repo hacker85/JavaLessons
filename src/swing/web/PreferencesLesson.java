@@ -16,6 +16,6 @@ public class PreferencesLesson {
         Preferences node2 = root.userNodeForPackage(new PreferencesLesson().getClass());
         node.put("myInt", "2");
         System.out.println(node.getInt("myInt", 1));
-        root.exportNode(new FileOutputStream("prop.xml"));
+        root.exportSubtree(new FileOutputStream("prop.xml"));
     }
 }
