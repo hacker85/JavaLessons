@@ -1,4 +1,4 @@
-package swing.web;
+package properties;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
