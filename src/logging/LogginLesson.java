@@ -1,9 +1,7 @@
 package logging;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 /**
  * Created by husiv on 10/4/16.
@@ -11,19 +9,51 @@ import java.util.logging.Logger;
 public class LogginLesson {
     public static void main(String[] args) throws IOException {
         //-Djava.util.logging.config.file=/home/max/IdeaProjects/JavaLessons/src/logging/log.properties
-        LogManager.getLogManager().readConfiguration();
-        System.out.println(System.getProperty("java.util.logging.config.file"));
+        //LogManager.getLogManager().readConfiguration();
+        //System.out.println(System.getProperty("java.util.logging.config.file"));
 
-        System.out.println(Logger.getGlobal().getLevel());
-        Logger.getGlobal().setLevel(Level.INFO);
-        Logger.getGlobal().info("info message");
+        //System.out.println(Logger.getGlobal().getLevel());
+        Logger logger = Logger.getGlobal();
+        logger.setLevel(Level.INFO);
+        logger.info("info message");
 
-        Logger logger = Logger.getLogger("com.logging");
-        logger.warning("warning");
-        logger.fine("fine");
-        logger.throwing("LogginLesson", "main", new Throwable());
-        logger.log(Level.ALL, "something went wrong", new Throwable());
+        Logger logger2 = Logger.getLogger("logging");
+        logger2.warning("warning");
+        logger2.fine("fine");
+        logger2.setLevel(Level.ALL);
+        logger2.throwing("LogginLesson", "main", new Throwable());
+        logger2.log(Level.WARNING, "something went wrong", new Throwable());
 
-        Logger currentClass = Logger.getLogger(LogginLesson.class.getName());
+        Logger currentClassLogger = Logger.getLogger(LogginLesson.class.getName());
+        currentClassLogger.setLevel(Level.FINE);
+        currentClassLogger.setUseParentHandlers(false);
+        Handler handler = new ConsoleHandler();
+        handler.setLevel(Level.INFO);
+        currentClassLogger.addHandler(handler);
+        Handler fileHandler = new FileHandler("%h/java%u.log");
+        fileHandler.setFormatter(new MyFormatter());
+        currentClassLogger.addHandler(fileHandler);
+        currentClassLogger.fine("fine");
+        currentClassLogger.info("info");
+        currentClassLogger.setFilter(new MyFilter());
+        currentClassLogger.info("info");
+        currentClassLogger.info("inblafo");
+
+//        Handler streamHandler = new StreamHandler();
+//        Handler socketHandler = new SocketHandler();
+    }
+
+    static class MyFilter implements Filter {
+        @Override
+        public boolean isLoggable(LogRecord record) {
+            return record.getMessage().contains("bla");
+        }
+    }
+
+    static class MyFormatter extends Formatter {
+        @Override
+        public String format(LogRecord record) {
+            return record.getMessage() + System.getProperty("line.separator");
+        }
     }
 }
