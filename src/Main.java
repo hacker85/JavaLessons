@@ -15,6 +15,6 @@ public class Main {
         FileInputStream in = new FileInputStream("my.properties");
         properties.load(in);
         System.out.println(properties.getProperty("max"));
-        System.out.println(properties.getProperty("bla"));
+        //System.out.println(properties.getProperty("bla"));
     }
 }
