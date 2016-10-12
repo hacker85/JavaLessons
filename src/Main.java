@@ -1,20 +1,17 @@
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import javax.swing.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        Properties defaultProperties = new Properties();
-        defaultProperties.setProperty("bla", "my defaul");
+    public static void main(String[] args) throws Exception {
+        JFrame jFrame = getFrame();
+        JPanel jPanel = new JPanel();
+        jFrame.add(jPanel);
+    }
 
-        Properties properties = new Properties(defaultProperties);
-//        properties.setProperty("one", "1");
-//        System.out.println(properties.getProperty("one"));
-//        FileOutputStream out = new FileOutputStream("my.properties");
-//        properties.store(out, "my commets");
-        FileInputStream in = new FileInputStream("my.properties");
-        properties.load(in);
-        System.out.println(properties.getProperty("max"));
-        //System.out.println(properties.getProperty("bla"));
+    static JFrame getFrame() {
+        JFrame jFrame = new JFrame() {};
+        jFrame.setVisible(true);
+        jFrame.setBounds(750, 250, 500 ,500);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        return jFrame;
     }
 }
