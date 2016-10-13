@@ -22,6 +22,7 @@ public class JListLesson {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 JOptionPane.showMessageDialog(jPanel, values[e.getLastIndex()]);
+                JList list = (JList) e.getSource();
                 for(String s :jList.getSelectedValuesList()) {
                     System.out.println(s);
                 }
