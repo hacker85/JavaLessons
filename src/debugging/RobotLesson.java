@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by husiv on 10/11/16.
@@ -37,11 +38,16 @@ public class RobotLesson {
                 } catch (AWTException e1) {
                     e1.printStackTrace();
                 }
+                robot.delay(1000);
                 robot.mouseMove(750 + jButton.getX() + 20, 250 + jButton.getY() + 30);
                 robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.mouseRelease(InputEvent.BUTTON1_MASK);
 
-                //robot.keyPress(KeyEvent.VK_D);
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+
+//                Rectangle rectangle = new Rectangle(0,0, 1000, 1000);
+//                BufferedImage image = robot.createScreenCapture(rectangle);
             }
         });
     }
