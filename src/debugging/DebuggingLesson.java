@@ -59,7 +59,7 @@ public class DebuggingLesson {
         //-Xprof
     }
 
-    static void secondMethod() {
+    private static void secondMethod() {
         Thread.dumpStack();
     }
 
