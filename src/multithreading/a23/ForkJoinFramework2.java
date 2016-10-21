@@ -36,7 +36,6 @@ public class ForkJoinFramework2 {
 //            } else {
 //                разбиваем операцию на части
 //            }
-            //разбиваем на отрезки
             if((to - from) <= numOfOperations/numOfThreads) {
                 long j = 0;
                 for (long i = from; i < to; i++) {
