@@ -46,7 +46,7 @@ class MyResource {
             Thread.yield();
         }
         this.i = ++i;
-        //changeJ();
+        changeJ();
     }
     void changeJ() {
         int j = this.j;

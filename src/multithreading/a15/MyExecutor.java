@@ -10,8 +10,8 @@ import java.util.concurrent.ExecutorService;
 public class MyExecutor {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = java.util.concurrent.Executors.newCachedThreadPool();
-        //ExecutorService executorService = Executors.newFixedThreadPool(1);
-        //ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        ExecutorService executorService = Executors.newFixedThreadPool(10);
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.submit(new MyRunnuble());
         System.out.println(executorService.submit(new MyCallble()).get());
         executorService.shutdown();

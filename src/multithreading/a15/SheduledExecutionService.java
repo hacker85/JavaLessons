@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class SheduledExecutionService {
     public static void main(String[] args) {
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-        service.schedule(new MyThread(), 3, TimeUnit.SECONDS);
+        service.schedule(new MyThread(), 2, TimeUnit.SECONDS);
         service.shutdown();
     }
 

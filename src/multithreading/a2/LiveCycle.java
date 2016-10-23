@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.a2;
 
 /**
  * Created by max on 10/14/16.

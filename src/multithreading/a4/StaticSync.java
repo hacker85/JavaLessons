@@ -37,20 +37,24 @@ class StaticSyncThread extends Thread {
 class StaticResource {
     static int i;
 
-    public synchronized void changeI() {
-        int i = StaticResource.i;
-        if(Thread.currentThread().getName().equals("Thread-0")) {
-            Thread.yield();
+    public void changeI() {
+        synchronized (this) {
+            int i = StaticResource.i;
+            if (Thread.currentThread().getName().equals("Thread-0")) {
+                Thread.yield();
+            }
+            i++;
+            StaticResource.i = i;
         }
-        i++;
-        StaticResource.i = i;
     }
-    public static synchronized void changeStaticI() {
-        int i = StaticResource.i;
-        if(Thread.currentThread().getName().equals("Thread-0")) {
-            Thread.yield();
+    public static void changeStaticI() {
+        synchronized (StaticResource.class) {
+            int i = StaticResource.i;
+            if(Thread.currentThread().getName().equals("Thread-0")) {
+                Thread.yield();
+            }
+            i++;
+            StaticResource.i = i;
         }
-        i++;
-        StaticResource.i = i;
     }
 }

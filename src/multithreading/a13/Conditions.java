@@ -12,8 +12,8 @@ public class Conditions {
     static Condition condition = lock.newCondition();
     static int account = 0;
     public static void main(String[] args) {
-        new AccountPlus().start();
         new AccountMinus().start();
+        new AccountPlus().start();
     }
     static class AccountPlus extends Thread {
         @Override
