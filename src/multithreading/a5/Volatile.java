@@ -7,9 +7,11 @@ public class Volatile {
 
     static int i;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t = new WriteThread();
+        t.start();
         new ReadThread().start();
-        new WriteThread().start();
+        System.out.println(i);
     }
 
     static class WriteThread extends Thread {

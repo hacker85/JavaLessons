@@ -11,6 +11,7 @@ public class RundomAndTimeUnit {
         System.out.println(Math.random());
         System.out.println(ThreadLocalRandom.current().nextInt());
 
+        Thread.sleep(TimeUnit.HOURS.toMillis(5));
         Thread.sleep(TimeUnit.SECONDS.toMillis(10));
     }
 }

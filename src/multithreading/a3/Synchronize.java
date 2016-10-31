@@ -10,11 +10,11 @@ public class Synchronize {
         Thread thread1 = new SyncThread(resource);
         Thread thread2 = new SyncThread(resource);
 
-        thread1.start();
-        thread2.start();
-
         thread1.join();
         thread2.join();
+
+        thread1.start();
+        thread2.start();
 
         System.out.println(resource.getI());
     }
@@ -36,16 +36,18 @@ class SyncThread extends Thread {
 class Resource {
     private int i;
 
-    public int getI() {
+    public synchronized int getI() {
         return i;
     }
 
     public void changeI() {
-        int i = this.i;
-        if(Thread.currentThread().getName().equals("Thread-0")) {
-            Thread.yield();
+        synchronized (this) {
+            int i = this.i;
+            if (Thread.currentThread().getName().equals("Thread-0")) {
+                Thread.yield();
+            }
+            i++;
+            this.i = i;
         }
-        i++;
-        this.i = i;
     }
 }

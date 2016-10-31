@@ -30,15 +30,15 @@ public class SyncColletions {
     static class NamedList {
         List<String> list = Collections.synchronizedList(new ArrayList<>());
 
-        public void add(String name) {
+        public synchronized void add(String name) {
             list.add(name);
         }
 
-        public String removeFirst() {
+        public synchronized String removeFirst() {
             if(list.size() > 0) {
-//                if(Thread.currentThread().getName().equals("one")) {
-//                    Thread.yield();
-//                }
+                if(Thread.currentThread().getName().equals("one")) {
+                    Thread.yield();
+                }
                 return (String)list.remove(0);
             }
             return null;
