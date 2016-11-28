@@ -1,6 +1,8 @@
 package swing.adwanced;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import java.awt.*;
 import java.io.IOException;
 
@@ -15,6 +17,22 @@ public class JEditorPaneLesson {
 
         JEditorPane jEditorPane = new JEditorPane();
         jEditorPane.setPage("http://help.websiteos.com/websiteos/example_of_a_simple_html_page.htm");
+
+        jEditorPane.addHyperlinkListener(new HyperlinkListener() {
+            public void hyperlinkUpdate(HyperlinkEvent event)
+            {
+                if (event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    try
+                    {
+                        jEditorPane.setPage(event.getURL());
+                    }
+                    catch (IOException e)
+                    {
+                        jEditorPane.setText("Exception: " + e);
+                    }
+                }
+            }
+        });
 
         jPanel.add(jEditorPane);
 
