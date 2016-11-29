@@ -13,7 +13,7 @@ public class ProgressMonitorLesson extends JFrame {
     static ProgressMonitor progressMonitor = new ProgressMonitor(null, "Message", "Initializing . . .", 0, 100);
 
     public static void main(String[] args) throws IOException {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i <= 100; i++) {
             if (progressMonitor.isCanceled()) {
                 progressMonitor.close();
                 System.exit(1);
@@ -28,7 +28,7 @@ public class ProgressMonitorLesson extends JFrame {
         }
     }
 
-    ProgressMonitorLesson() {
+    {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Toolkit kit = Toolkit.getDefaultToolkit();
