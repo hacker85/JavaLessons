@@ -21,7 +21,6 @@ public class ProgressIndicatorLesson extends JFrame {
 
         for (int i = 0; i <= 100; i += 10) {
             jProgressBar.setValue(i);
-            System.out.println(jProgressBar.getValue());
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e1) {
