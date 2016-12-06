@@ -2,21 +2,28 @@ package swing.adwanced;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class SplitPaneLesson extends JFrame {
-    static JFrame jFrame = new SplitPaneLesson();
+public class TabbedPaneLesson extends JFrame {
+    static JFrame jFrame = new TabbedPaneLesson();
     public static void main(String[] args) throws IOException {
         JTextArea jTextArea = new JTextArea();
         JList<String> jList = new JList<>(new String[]{"one", "two"});
-        JSplitPane jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTextArea, jList);
-        jSplitPane.setOneTouchExpandable(true);
-        jSplitPane.setContinuousLayout(true);
-        jFrame.add(jSplitPane);
+        JTabbedPane jTabbedPane = new JTabbedPane();
+        jTabbedPane.addTab("textArea", jTextArea);
+        jTabbedPane.addTab("list", jList);
+
+        int textAreaIndex = jTabbedPane.indexOfTab("textArea");
+        int listIndex = jTabbedPane.indexOfTab("list");
+        jTabbedPane.setMnemonicAt(textAreaIndex, KeyEvent.VK_0);
+        jTabbedPane.setMnemonicAt(listIndex, KeyEvent.VK_1);
+
+        jFrame.add(jTabbedPane);
         jFrame.revalidate();
     }
 
-    SplitPaneLesson() {
+    TabbedPaneLesson() {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Toolkit kit = Toolkit.getDefaultToolkit();
