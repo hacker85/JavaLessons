@@ -10,11 +10,11 @@
     <resources>
         <j2se version="1.8+"
               href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="Test.jar" main="true" />
+        <jar href="Test.jar" overridingAdvancedLesson="true" />
     </resources>
     <application-desc
             name="Dynamic Tree Demo Application"
-            main-class="Test">
+            overridingAdvancedLesson-class="Test">
     </application-desc>
     <update check="background"/>
 </jnlp>
