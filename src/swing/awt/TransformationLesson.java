@@ -1,13 +1,14 @@
-import swing.awt.AreasLesson;
+package swing.awt;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
 
-public class Main {
+public class TransformationLesson {
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
         jFrame.add(new MyComponent());
@@ -17,10 +18,15 @@ public class Main {
         public void paint(Graphics g) {
             Graphics2D g2 = (Graphics2D)g;
 
-            Ellipse2D ellipse = new Ellipse2D.Double(0, 0, 200, 100);
-            Rectangle2D rectangle2D = new Rectangle2D.Double(0,0, 200, 100);
-            g2.clip(ellipse);
-            g2.fill(rectangle2D);
+            Rectangle2D rectangle2D = new Rectangle2D.Double(0, 0, 100, 100);
+
+            g2.scale(2, 2);
+            g2.translate(50, 50);
+            g2.shear(0.2, 0.5);
+            g2.rotate( 45);
+
+            g2.draw(rectangle2D);
+
         }
     }
     static JFrame getFrame() {

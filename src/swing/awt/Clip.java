@@ -1,13 +1,11 @@
-import swing.awt.AreasLesson;
+package swing.awt;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.*;
-import java.io.File;
-import java.io.IOException;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
-public class Main {
+public class Clip {
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
         jFrame.add(new MyComponent());
@@ -17,9 +15,9 @@ public class Main {
         public void paint(Graphics g) {
             Graphics2D g2 = (Graphics2D)g;
 
-            Ellipse2D ellipse = new Ellipse2D.Double(0, 0, 200, 100);
             Rectangle2D rectangle2D = new Rectangle2D.Double(0,0, 200, 100);
-            g2.clip(ellipse);
+            Ellipse2D ellipse2D = new Ellipse2D.Double(0,0, 200, 100);
+            g2.clip(ellipse2D);
             g2.fill(rectangle2D);
         }
     }
