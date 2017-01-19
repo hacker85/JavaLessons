@@ -17,10 +17,7 @@ public class Main {
         public void paint(Graphics g) {
             Graphics2D g2 = (Graphics2D)g;
 
-            Ellipse2D ellipse = new Ellipse2D.Double(0, 0, 200, 100);
-            Rectangle2D rectangle2D = new Rectangle2D.Double(0,0, 200, 100);
-            g2.clip(ellipse);
-            g2.fill(rectangle2D);
+
         }
     }
     static JFrame getFrame() {

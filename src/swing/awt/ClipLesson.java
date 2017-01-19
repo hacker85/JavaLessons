@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
-public class Clip {
+public class ClipLesson {
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
         jFrame.add(new MyComponent());
