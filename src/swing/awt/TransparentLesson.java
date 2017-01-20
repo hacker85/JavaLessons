@@ -1,13 +1,10 @@
-import swing.awt.AreasLesson;
+package swing.awt;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.*;
-import java.io.File;
-import java.io.IOException;
+import java.awt.geom.Rectangle2D;
 
-public class Main {
+public class TransparentLesson {
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
         jFrame.add(new MyComponent());
@@ -17,18 +14,18 @@ public class Main {
         public void paint(Graphics g) {
             Graphics2D g2 = (Graphics2D)g;
 
-            Rectangle2D rectangle2D = new Rectangle2D.Double(50, 50, 100, 100);
-            Color color = new Color(0f, 0f, 0f);
+            Rectangle2D rectangle2D = new Rectangle2D.Double(50,50, 100, 100);
+            Color color = new Color(0f, 0f, 0f, 1f);
             g2.setColor(color);
+            g2.setComposite(AlphaComposite.SrcOver);
             g2.fill(rectangle2D);
 
-            Rectangle2D rectangle2D2 = new Rectangle2D.Double(150, 50, 100, 100);
+            Rectangle2D rectangle2D2 = new Rectangle2D.Double(150,50, 100, 100);
             Color color2 = new Color(0f, 0f, 0f, 0.5f);
             g2.setColor(color2);
-            g2.setComposite(AlphaComposite.SrcOver);
             g2.fill(rectangle2D2);
 
-            Rectangle2D rectangle2D3 = new Rectangle2D.Double(250, 50, 100, 100);
+            Rectangle2D rectangle2D3 = new Rectangle2D.Double(250,50, 100, 100);
             Color color3 = new Color(0f, 0f, 0f, 0.1f);
             g2.setColor(color3);
             g2.fill(rectangle2D3);
