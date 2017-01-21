@@ -20,9 +20,10 @@ public class ImgRasterLesson {
             pixel[1] = 0;
             pixel[2] = 0;
             writableRaster.setPixel(i,0, pixel);
-            //writableRaster.getPixels(0,0, image.getHeight(), image.getWidth(), new int[4 * image.getHeight() * image.getWidth()]);
-            //writableRaster.setPixels(0,0,image.getHeight(),image.getWidth(),new int[4 * image.getHeight() * image.getWidth()]);
         }
+
+        writableRaster.getPixels(0,0, image.getHeight(), image.getWidth(), new int[4 * image.getHeight() * image.getWidth()]);
+        writableRaster.setPixels(0,0,image.getHeight(),image.getWidth(),new int[4 * image.getHeight() * image.getWidth()]);
 
         Object data = writableRaster.getDataElements(0,0, null);
         ColorModel colorModel = image.getColorModel();
