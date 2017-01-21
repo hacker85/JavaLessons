@@ -8,9 +8,7 @@ import javax.imageio.stream.ImageOutputStream;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorModel;
-import java.awt.image.WritableRaster;
+import java.awt.image.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,9 +17,6 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File file = new File("smile.jpg");
-        BufferedImage image = ImageIO.read(file);
-
 
     }
 }
