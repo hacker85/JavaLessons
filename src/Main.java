@@ -1,5 +1,5 @@
 import java.awt.*;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 
 public class Main {
