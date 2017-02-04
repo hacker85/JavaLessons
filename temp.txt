@@ -1,2 +1,2 @@
-new
-bla
+str1
+str2
