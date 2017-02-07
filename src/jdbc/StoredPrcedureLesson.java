@@ -33,7 +33,7 @@ public class StoredPrcedureLesson {
                     System.out.println(resultSet.getString("name"));
                 }
             }
-
+            System.out.println("--------------");
         } catch (SQLException e) {
             e.printStackTrace();
         }
