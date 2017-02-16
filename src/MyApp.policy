@@ -1,0 +1,6 @@
+grant {
+    permission java.io.FilePermission "/tmp/*", "read,write";
+    permission java.net.SocketPermission "*.horstmann.com:8000-8999", "connect";
+    permission java.util.PropertyPermission "os.name", "read";
+    permission security.MyPermission "use";
+};
