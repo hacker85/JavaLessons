@@ -1,0 +1,15 @@
+keytool -genkeypair -keystore max.certs -alias max
+
+keytool -exportcert -keystore max.certs -alias max -file max.cer
+
+keytool -printcert -file max.cer
+
+keytool -list -v -keystore /usr/lib/jvm/java-8-oracle/jre/lib/security/cacerts
+
+keytool -importcert -keystore bob.certs -alias max -file max.cer
+
+jar cvf test.jar Test.class
+
+jarsigner -keystore max.certs Test.jar max
+
+jarsigner -verify -keystore bob.certs Test.jar
