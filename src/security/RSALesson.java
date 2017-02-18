@@ -22,7 +22,7 @@ public class RSALesson {
         Key publicKey = keyPair.getPublic();
         Key privateKey = keyPair.getPrivate();
 
-        cipher.init(mode, privateKey);
+        cipher.init(mode, publicKey);
 
         String hello = "hello world";
         byte[] bytes = cipher.doFinal(hello.getBytes(), 0, hello.length());
@@ -32,7 +32,7 @@ public class RSALesson {
         System.out.println("\n----------");
 
         Cipher decryptCipher = Cipher.getInstance("RSA");
-        decryptCipher.init(Cipher.DECRYPT_MODE, publicKey);
+        decryptCipher.init(Cipher.DECRYPT_MODE, privateKey);
         byte[] bytes2 = decryptCipher.doFinal(bytes, 0, bytes.length);
         for(byte b : bytes2) {
             System.out.print((char)b);
