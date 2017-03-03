@@ -1,0 +1,15 @@
+.root {
+    -fx-font-size: 50;
+}
+
+.button {
+    -fx-text-fill: brighter-sky-blue;
+    -fx-border-color: rgba(255, 255, 255, .80);
+    -fx-border-radius: 8;
+    -fx-padding: 6 6 6 6;
+    -fx-font: bold italic 20pt "LucidaBrightDemiBold";
+}
+
+.test {
+    -fx-background-color: bisque;
+}
