@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 
+<?import fx.CustomControl?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
       prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.Controller" >
    <children>
@@ -33,5 +34,7 @@
             </Menu>
         </menus>
       </MenuBar>
+     <CustomControl>
+     </CustomControl>
    </children>
 </VBox>
