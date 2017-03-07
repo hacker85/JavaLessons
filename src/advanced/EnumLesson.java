@@ -1,7 +1,15 @@
 package advanced;
 
+import java.lang.reflect.InvocationTargetException;
+
+enum Level{BEGGINER{
+    public void print() {
+        System.out.println("print");
+    }
+}};
 public class EnumLesson {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Level.BEGGINER.getClass().getMethod("print").invoke(Level.BEGGINER);
     }
 }
 
@@ -15,7 +23,7 @@ public class EnumLesson {
 //    static
 //    {
 //        BEGINNER = new Level("BEGINNER", 0);
-//        INTERMEDIATE = new Level("INTERMEDIATE", 1);
+//        INTERMEDIATE = new Level("INTE RMEDIATE", 1);
 //        EXPERT = new Level("EXPERT", 2);
 //        $VALUES = (new Level[] {
 //                BEGINNER, INTERMEDIATE, EXPERT
