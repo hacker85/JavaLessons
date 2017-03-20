@@ -21,7 +21,7 @@ public class DomLesson {
 
         printElements(root.getChildNodes(), 0);
 //        NodeList list = root.getChildNodes();
-//        for (int i = 0; i < list.getLength(); i++) {
+//        for (int i = 0; i < list.getHeight(); i++) {
 //            Node node = list.item(i);
 //            if(node instanceof Element) {
 //                System.out.println(node.getNodeName());
