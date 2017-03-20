@@ -1,6 +1,6 @@
 package solid;
 
-public class SolidSmipleLesson {
+public class SingleResponsibilityLesson {
     public static void main(String[] args) {
 
     }

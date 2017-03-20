@@ -1,6 +1,6 @@
 package solid;
 
-public class SolidOpenCloseLesson {
+public class OpenCloseLesson {
     public static void main(String[] args) {
 
     }
