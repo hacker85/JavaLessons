@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="HelloServlet">
-    <output-path>$PROJECT_DIR$/out/production/JavaLessons/ee</output-path>
-    <root id="root" />
-  </artifact>
-</component>
