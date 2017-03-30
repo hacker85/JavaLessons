@@ -11,4 +11,14 @@
         <!--<servlet-name>HelloServlet</servlet-name>-->
         <!--<url-pattern>/hello</url-pattern>-->
     <!--</servlet-mapping>-->
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>/jsp/*jsp</url-pattern>
+            <el-ignored>false</el-ignored>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>
