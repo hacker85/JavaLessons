@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<b>test</b>
+<%! int k = 5;%>
 </body>
 </html>

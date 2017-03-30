@@ -1,15 +1,6 @@
-package ee;
+package jsp;
 
-public class DependencyInjection {
-    @javax.inject.Inject
-    Student student;
-    public static void main(String[] args) {
-
-    }
-}
-
-@javax.enterprise.context.RequestScoped
-class Student {
+public class Student {
     String name;
     int age;
 
