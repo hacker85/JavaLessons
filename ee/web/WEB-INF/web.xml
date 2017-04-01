@@ -3,22 +3,146 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <!--<servlet>-->
-        <!--<servlet-name>HelloServlet</servlet-name>-->
-        <!--<servlet-class>servlets.HelloServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>HelloServlet</servlet-name>-->
-        <!--<url-pattern>/hello</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>a</servlet-name>
+        <servlet-class>mapped.A</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>a</servlet-name>
+        <url-pattern>/mapped/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>b</servlet-name>
+        <servlet-class>mapped.B</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>b</servlet-name>
+        <url-pattern>/mapped/b</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>c</servlet-name>
+        <servlet-class>mapped.C</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>c</servlet-name>
+        <url-pattern>/mapped/bar/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>init</servlet-name>
+        <servlet-class>servlets.InitServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Max</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>22</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>init</servlet-name>
+        <url-pattern>/init</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>initJsp</servlet-name>
+        <jsp-file>/jsp/Init.jsp</jsp-file>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Max</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>22</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>initJsp</servlet-name>
+        <url-pattern>/thisIsJsp</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>email</param-name>
+        <param-value>mail@gmail.com</param-value>
+    </context-param>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>/html/default.html</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+    <icon>
+        <small-icon>/img/icon16.gif</small-icon>
+        <large-icon>/img/icon32.gif</large-icon>
+    </icon>
+
+    <display-name>Rare Books</display-name>
+
+    <description>
+        This Web application represents the store developed for
+        rare-books.com, an online bookstore specializing in rare
+        and limited-edition books.
+    </description>
+
+    <mime-mapping>
+        <extension>foo</extension>
+        <mime-type>application/x-fubar</mime-type>
+    </mime-mapping>
+
+    <locale-encoding-mapping-list>
+        <locale-encoding-mapping>
+            <locale>ja</locale>
+            <encoding>Shift_JIS</encoding>
+        </locale-encoding-mapping>
+        <locale-encoding-mapping>
+            <locale>he</locale>
+            <encoding>windows-1255</encoding>
+        </locale-encoding-mapping>
+    </locale-encoding-mapping-list>
+
+    <distributable />
+
+    <error-page>
+        <!--<error-code>404</error-code>-->
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/jsp/Error.jsp</location>
+    </error-page>
+
     <jsp-config>
+        <!--<taglib>-->
+        <!--<taglib-uri>/charts</taglib-uri>-->
+        <!--<taglib-location>-->
+        <!--/WEB-INF/text.txt-->
+        <!--</taglib-location>-->
+        <!--</taglib>-->
         <jsp-property-group>
-            <url-pattern>/jsp/*jsp</url-pattern>
+            <url-pattern>/jsp/*</url-pattern>
             <el-ignored>false</el-ignored>
         </jsp-property-group>
         <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
+            <url-pattern>/jsp/*</url-pattern>
             <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>/jsp/*</url-pattern>
+            <is-xml>false</is-xml>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>/jsp/Page.jsp</url-pattern>
+            <include-prelude>/jsp/Header.jsp</include-prelude>
+        </jsp-property-group>
+        <jsp-property-group>
+            <url-pattern>/jsp/Page.jsp</url-pattern>
+            <include-coda>/jsp/Footer.jsp</include-coda>
         </jsp-property-group>
     </jsp-config>
 </web-app>
