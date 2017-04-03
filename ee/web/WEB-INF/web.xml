@@ -217,4 +217,8 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
     </filter-mapping>
+
+    <listener>
+        <listener-class>jsp.ContextListener</listener-class>
+    </listener>
 </web-app>
