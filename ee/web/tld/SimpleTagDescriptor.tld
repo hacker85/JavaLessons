@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>MySimpleTag</short-name>
+
+    <tag>
+        <name>HelloWorldTag</name>
+        <tag-class>jsp.SimpleTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>InnerTag</name>
+        <tag-class>jsp.InnerTag</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+
+    <function>
+        <name>Minus</name>
+        <function-class>jsp.JSPHelper</function-class>
+        <function-signature>int minux(int,int)</function-signature>
+    </function>
+</taglib>
