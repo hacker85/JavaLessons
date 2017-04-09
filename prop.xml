@@ -7,26 +7,26 @@
       <entry key="key" value="velue"/>
       <entry key="one" value="1"/>
     </map>
-    <node name="com">
+    <node title="com">
       <map/>
-      <node name="max">
+      <node title="max">
         <map/>
-        <node name="lessons">
+        <node title="lessons">
           <map/>
         </node>
       </node>
     </node>
-    <node name="jetbrains">
+    <node title="jetbrains">
       <map>
         <entry key="user_id_on_machine" value="56b6ce91-2e0c-4b46-9b73-542f7011b029"/>
       </map>
-      <node name="privacy_policy">
+      <node title="privacy_policy">
         <map>
           <entry key="accepted_version" value="1.1"/>
         </map>
       </node>
     </node>
-    <node name="properties">
+    <node title="properties">
       <map/>
     </node>
   </root>

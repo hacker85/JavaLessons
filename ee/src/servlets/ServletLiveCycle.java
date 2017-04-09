@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/LiveCycle")
+@WebServlet("/PostConstructExample")
 public class ServletLiveCycle extends HttpServlet {
     @Override
     public void init() throws ServletException {

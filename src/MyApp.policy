@@ -1,7 +1,7 @@
 grant {
     permission java.io.FilePermission "/tmp/*", "read,write";
     permission java.net.SocketPermission "*.horstmann.com:8000-8999", "connect";
-    //permission java.util.PropertyPermission "os.name", "read";
+    //permission java.util.PropertyPermission "os.title", "read";
     permission security.MyPermission "use";
 };
 
@@ -11,5 +11,5 @@ grant{
 };
 grant principal com.sun.security.auth.UnixPrincipal "max" {
     permission java.util.PropertyPermission "user.*", "read";
-    permission java.util.PropertyPermission "os.name", "read";
+    permission java.util.PropertyPermission "os.title", "read";
 };

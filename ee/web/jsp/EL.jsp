@@ -5,27 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-    <%--name = ${requestScope.get("stud").name}--%>
+    <%--title = ${requestScope.get("stud").title}--%>
     <%--${sessionScope}--%>
     <%--${applicationScope}--%>
-    <%--<jsp:useBean id="Student" class="jsp.Student" ><jsp:setProperty name="Student" property="name" value="Alex"/> </jsp:useBean>--%>
-    ${stud.name}
-    ${stud["name"]}
+    <%--<jsp:useBean id="Student" class="jsp.Student" ><jsp:setProperty title="Student" property="title" value="Alex"/> </jsp:useBean>--%>
+    ${stud.title}
+    ${stud["title"]}
 
 names: ${names[1]}
 map: ${map[one]}
 map: ${map.one}
 ${1 + 2 + 3 * 5 / 2}
-${stud.name == "hello"}
+${stud.title == "hello"}
 ${ 5 > 4}
 ${ true && false }
 ${ true ? hello : world }
-<jsp:setProperty name="stud" property="name" value="${Mr}.${Max}"/>
+<jsp:setProperty title="stud" property="title" value="${Mr}.${Max}"/>
 \${hello}
 
 ${pageContext.session.id}
-${param.get("name")}
-${param.name}
+${param.get("title")}
+${param.title}
 ${header.get("")}
 ${cookie.get("JSESSIONID").value}
 ${initParam.get("")}

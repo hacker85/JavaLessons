@@ -1,6 +1,6 @@
-<%@ attribute name="name" required="false" %>
+<%@ attribute title="title" required="false" %>
 <b>hello world</b></br>
-<b><%=name%></b></br>
+<b><%=title%></b></br>
 <%
     out.print("<b>");
     getJspBody().invoke(null);

@@ -6,12 +6,12 @@
     <title>Title</title>
 </head>
 <body>
-    <simple:HelloWorldTag name="Max">
-        yohoho ${name} 5 - 4 = ${simple:Minus(5, 4)}
+    <simple:HelloWorldTag title="Max">
+        yohoho ${title} 5 - 4 = ${simple:Minus(5, 4)}
         <simple:InnerTag>
 
         </simple:InnerTag>
     </simple:HelloWorldTag>
-    <simpleJsp:SimpleJspTag name="Max">yohoho</simpleJsp:SimpleJspTag>
+    <simpleJsp:SimpleJspTag title="Max">yohoho</simpleJsp:SimpleJspTag>
 </body>
 </html>

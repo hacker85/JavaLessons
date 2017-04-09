@@ -6,27 +6,27 @@
         version="2.1">
 
     <tlib-version>1.0</tlib-version>
-    <short-name>MySimpleTag</short-name>
+    <short-title>MySimpleTag</short-title>
 
     <tag>
-        <name>HelloWorldTag</name>
+        <title>HelloWorldTag</title>
         <tag-class>jsp.SimpleTag</tag-class>
         <body-content>scriptless</body-content>
         <attribute>
-            <name>name</name>
+            <title>title</title>
             <required>false</required>
             <rtexprvalue>false</rtexprvalue>
         </attribute>
     </tag>
 
     <tag>
-        <name>InnerTag</name>
+        <title>InnerTag</title>
         <tag-class>jsp.InnerTag</tag-class>
         <body-content>scriptless</body-content>
     </tag>
 
     <function>
-        <name>Minus</name>
+        <title>Minus</title>
         <function-class>jsp.JSPHelper</function-class>
         <function-signature>int minux(int,int)</function-signature>
     </function>

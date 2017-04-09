@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javaee-api-7.0-1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/apps/apache-tomee-webprofile-7.0.3/lib/javaee-api-7.0-1.jar!/" />
+      <root url="jar://$USER_HOME$/apps/apache-tomee-webprofile-7.0.3/lib/jsp-api.jar!/" />
+      <root url="jar://$USER_HOME$/apps/apache-tomee-webprofile-7.0.3/lib/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

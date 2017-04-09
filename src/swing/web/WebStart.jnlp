@@ -13,7 +13,7 @@
         <jar href="Test.jar" overridingAdvancedLesson="true" />
     </resources>
     <application-desc
-            name="Dynamic Tree Demo Application"
+            title="Dynamic Tree Demo Application"
             overridingAdvancedLesson-class="Test">
     </application-desc>
     <update check="background"/>

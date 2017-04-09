@@ -1,10 +1,13 @@
 package jsp;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 import java.io.IOException;
 
+@WebFilter(value = "/filterServlet")
+//@WebFilter(filterName = "annotationFilter", urlPatterns = "/filterServlet", initParams = {@WebInitParam(name = "name", value = "value")})
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
