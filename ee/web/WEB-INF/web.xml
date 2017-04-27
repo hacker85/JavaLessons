@@ -111,11 +111,11 @@
 
     <distributable />
 
-    <error-page>
-        <!--<error-code>404</error-code>-->
-        <exception-type>javax.servlet.ServletException</exception-type>
-        <location>/jsp/Error.jsp</location>
-    </error-page>
+    <!--<error-page>-->
+        <!--&lt;!&ndash;<error-code>404</error-code>&ndash;&gt;-->
+        <!--<exception-type>javax.servlet.ServletException</exception-type>-->
+        <!--<location>/jsp/Error.jsp</location>-->
+    <!--</error-page>-->
 
     <jsp-config>
         <!--<taglib>-->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                 http://java.sun.com/xml/ns/persistence/orm_2_1.xsd"
+                 version="2.0">
+
+    <entity class="ee.jpa.entities.XmlLesson">
+        <table name="XmlLesson"/>
+        <attributes>
+            <id name="id">
+                <column name="id" nullable="false" updatable="true"/>
+            </id>
+            <basic name="name">
+                <column length="2000"/>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>
