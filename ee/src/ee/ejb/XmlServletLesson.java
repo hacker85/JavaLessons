@@ -1,6 +1,6 @@
-package ee.jpa;
+package ee.ejb;
 
-import ee.jpa.entities.Book;
+import ee.ejb.beans.XmlBean;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/jpaExample")
-public class ServletExample extends HttpServlet {
+@WebServlet("/xmlServlet")
+public class XmlServletLesson extends HttpServlet {
     @EJB
-    JpaBean jpaBean;
+    XmlBean xmlBean;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        jpaBean.saveBook(new Book("example"));
+        resp.getWriter().write(xmlBean.sayHello());
     }
 }

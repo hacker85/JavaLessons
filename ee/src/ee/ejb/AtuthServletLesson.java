@@ -1,6 +1,6 @@
-package ee.jpa;
+package ee.ejb;
 
-import ee.jpa.entities.Book;
+import ee.ejb.beans.AuthBean;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/jpaExample")
-public class ServletExample extends HttpServlet {
+@WebServlet("/authLesson")
+public class AtuthServletLesson extends HttpServlet {
     @EJB
-    JpaBean jpaBean;
+    AuthBean authBean;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        jpaBean.saveBook(new Book("example"));
+        resp.getWriter().write(authBean.sayHello());
     }
 }

@@ -147,12 +147,12 @@
     </jsp-config>
 
     <login-config>
-        <auth-method>FORM</auth-method>
-        <realm-name>realm name</realm-name>
-        <form-login-config>
-            <form-login-page>/secure/login.jsp</form-login-page>
-            <form-error-page>/secure/login-error.jsp</form-error-page>
-        </form-login-config>
+        <auth-method>BASIC</auth-method>
+        <!--<realm-name>realm name</realm-name>-->
+        <!--<form-login-config>-->
+            <!--<form-login-page>/secure/login.jsp</form-login-page>-->
+            <!--<form-error-page>/secure/login-error.jsp</form-error-page>-->
+        <!--</form-login-config>-->
     </login-config>
     <!--to log out clear session-->
 
@@ -160,6 +160,7 @@
         <web-resource-collection>
             <web-resource-name>secureJsp</web-resource-name>
             <url-pattern>/secure/*</url-pattern>
+            <!--<url-pattern>/authLesson</url-pattern>-->
             <!--<http-method>post</http-method>-->
         </web-resource-collection>
         <!--<web-resource-collection>-->
@@ -170,9 +171,9 @@
             <role-name>root</role-name>
             <role-name>admin</role-name>
         </auth-constraint>
-        <user-data-constraint>
-            <transport-guarantee>NONE</transport-guarantee>
-        </user-data-constraint>
+        <!--<user-data-constraint>-->
+            <!--<transport-guarantee>NONE</transport-guarantee>-->
+        <!--</user-data-constraint>-->
     </security-constraint>
     <security-role>
         <role-name>root</role-name>
