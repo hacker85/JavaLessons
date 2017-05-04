@@ -18,11 +18,11 @@
         <properties>
             <!--<property name="tomee.jpa.factory.lazy" value="true" />-->
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <!--<property name="javax.persistence.shared-cache-mode" value="ALL"/>-->
-            <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
-            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Lessons"/>-->
-            <!--<property name="javax.persistence.jdbc.user" value="root"/>-->
-            <!--<property name="javax.persistence.jdbc.password" value="1"/>-->
+            <property name="javax.persistence.shared-cache-mode" value="ALL"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Lessons"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="1"/>
         </properties>
     </persistence-unit>
 </persistence>

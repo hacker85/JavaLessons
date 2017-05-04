@@ -25,15 +25,7 @@ public class NonJtaDataSourceLesson extends HttpServlet {
             userTransaction.begin();
             entityManager.persist(new Book("nonTitle"));
             userTransaction.commit();
-        } catch (NotSupportedException e) {
-            e.printStackTrace();
-        } catch (SystemException e) {
-            e.printStackTrace();
-        } catch (HeuristicMixedException e) {
-            e.printStackTrace();
-        } catch (HeuristicRollbackException e) {
-            e.printStackTrace();
-        } catch (RollbackException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
