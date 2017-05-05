@@ -21,13 +21,13 @@ public class TimeServiceBean {
         System.out.println("it's time");
         System.out.println(timer.getInfo());
     }
-    @Schedule(second = "*", minute = "*", hour = "*", persistent = false)
+//    @Schedule(second = "*", minute = "*", hour = "*", persistent = false)
     void print() {
         System.out.println("it worked");
     }
 
     @AroundTimeout
-    Object aroundTimeout(InvocationContext context) throws Exception {
+    Object aroundTimout(InvocationContext context) throws Exception {
         System.out.println("before print");
         Object proceed = context.proceed();
         System.out.println("after print");
