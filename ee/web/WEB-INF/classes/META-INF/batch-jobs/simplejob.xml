@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="simplejob" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+     version="1.0">
+    <properties>
+        <property name="input_file" value="input.txt"/>
+        <property name="output_file" value="output.txt"/>
+    </properties>
+    <step id="mychunk" next="mytask">
+        <chunk>
+            <reader ref="MyReader"></reader>
+            <processor ref="MyProcessor"></processor>
+            <writer ref="MyWriter"></writer>
+        </chunk>
+    </step>
+    <step id="mytask">
+        <batchlet ref="MyBatchlet"></batchlet>
+        <end on="COMPLETED"/>
+    </step>
+</job>
