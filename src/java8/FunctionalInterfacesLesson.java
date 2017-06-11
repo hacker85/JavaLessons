@@ -13,8 +13,13 @@ public class FunctionalInterfacesLesson {
 
         MyPredicate<Integer> myPredicate = x -> System.out.println(x);
         myPredicate.apply(5);
+        MyPredicate2 myPredicate2 = () -> System.out.println("hello world");
+        myPredicate2.apply();
     }
-}
-interface MyPredicate<T> {
-    void apply(T t);
+    interface MyPredicate<T> {
+        void apply(T t);
+    }
+    public abstract static interface MyPredicate2 {
+        void apply();
+    }
 }
