@@ -1,21 +1,19 @@
-package ee.jpa;
+package ee.jaxws.container;
 
-import ee.jpa.entities.Book;
-
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.WebServiceRef;
 import java.io.IOException;
 
-@WebServlet("/jpaExample")
-public class ServletExample extends HttpServlet {
-    @EJB
-    JpaBean jpaBean;
+@WebServlet("/tempServlet")
+public class WSContainerServlet extends HttpServlet {
+    @WebServiceRef
+    ContainerService containerService;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        jpaBean.saveBook(new Book("main"));
+        resp.getWriter().write(containerService.sayHello());
     }
 }

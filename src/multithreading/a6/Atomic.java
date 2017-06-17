@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Atomic {
 
-    //static int i;
+//    static int i;
     static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public static void main(String[] args) throws InterruptedException {
@@ -15,14 +15,15 @@ public class Atomic {
             new AtomicThread().start();
         }
         Thread.sleep(1000);
-        //System.out.println(i);
+//        System.out.println(i);
         System.out.println(atomicInteger.get());
     }
 
     static class AtomicThread extends Thread {
         @Override
         public void run() {
-            //i++;
+//            i++;
+//            i = i + 1;
             atomicInteger.incrementAndGet();
         }
     }
