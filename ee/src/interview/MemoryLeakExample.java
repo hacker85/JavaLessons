@@ -1,7 +1,6 @@
 package interview;
 
-import org.apache.commons.collections.map.HashedMap;
-
+import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -30,7 +29,7 @@ class GoodCache {
     }
 }
 class BadCache {
-    Map<Integer, Integer> hashedMap = new HashedMap();
+    Map<Integer, Integer> hashedMap = new HashMap();
     public void add(int i) {
         hashedMap.put(i, i);
     }
