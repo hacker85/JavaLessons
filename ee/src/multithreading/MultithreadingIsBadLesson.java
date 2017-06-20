@@ -10,7 +10,7 @@ public class MultithreadingIsBadLesson {
         System.out.println(System.currentTimeMillis() - start);
     }
     static class Counter {
-        int i;
+        volatile int i;
         synchronized void increase() {
             i++;
         }
