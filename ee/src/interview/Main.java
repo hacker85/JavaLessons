@@ -1,9 +1,8 @@
 package interview;
 
-import java.io.IOException;
 
-public class Main {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-
+public class Main extends Thread {
+    public static void main(String[] args) {
+        new Main().start();
     }
 }

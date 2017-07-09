@@ -1,10 +1,11 @@
 package multithreading.a8;
 
-/**
- * Created by max on 10/16/16.
- */
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
+
 public class Deadlock {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ResourceA resourceA = new ResourceA();
         ResourceB resourceB = new ResourceB();
         resourceA.resourceB = resourceB;
@@ -15,6 +16,16 @@ public class Deadlock {
         deadThread2.resourceB = resourceB;
         deadThread1.start();
         deadThread2.start();
+
+        Thread.sleep(1000);
+        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+        long[] deadlockedThreads = threadMXBean.findDeadlockedThreads();
+        if(deadlockedThreads != null) {
+            ThreadInfo[] threadInfo = threadMXBean.getThreadInfo(deadlockedThreads);
+            for (ThreadInfo info : threadInfo) {
+                System.out.println(info);
+            }
+        }
     }
 }
 
@@ -37,6 +48,11 @@ class DeadThread2 extends Thread {
 class ResourceA {
     ResourceB resourceB;
     public synchronized int getI() {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return resourceB.returnI();
     }
     public synchronized int returnI() {
