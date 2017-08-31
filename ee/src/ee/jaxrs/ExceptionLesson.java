@@ -1,24 +1,23 @@
 package ee.jaxrs;
 
 import javax.persistence.EntityNotFoundException;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
+import java.io.IOException;
 
 @Path("/exceptionRest")
 public class ExceptionLesson {
     @GET
     @Path("/{name}")
-    public String getName(@PathParam("name") String name) throws EntityNotFoundException {
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getName(@PathParam("name") String name) throws IOException {
         if(name.equals("Max")) {
 //            throw new ServletException();
 //            throw new WebServiceException();
 //            throw new WebApplicationException();
-
 
 //            throw new BadRequestException();
 //            throw new ForbiddenException();
@@ -27,7 +26,9 @@ public class ExceptionLesson {
 //            throw new NotAuthorizedException("wrond credentials");
 //            throw new NotFoundException();
 //            throw new NotSupportedException();
-            throw new EntityNotFoundException();
+            throw new IOException("qwer");
+        } else if(name.equals("Mike")) {
+            throw new RuntimeException("asdf");
         }
         return name;
     }

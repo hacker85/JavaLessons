@@ -47,9 +47,3 @@ public class ReturnTypesLesson {
         return Response.ok(new Student("Max"), MediaType.APPLICATION_JSON).build();
     }
 }
-
-abstract class A{
-    A() {
-
-    }
-}

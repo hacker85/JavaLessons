@@ -3,10 +3,11 @@ package ee.jaxrs;
 import javax.ws.rs.*;
 
 @Path("/extract")
+@Produces("text/plain")
 public class ExtractingParamsLesson {
     //[^/]+?
     @GET
-    @Path("/{id}")
+    @Path("/{id}/")
     public String returnId(@PathParam("id") String id) {
         return id;
     }
@@ -46,6 +47,6 @@ public class ExtractingParamsLesson {
     @POST
     @Path("/form")
     public String extractForm(@FormParam("test") String test) {
-        return test;
+        return "test value is: " + test;
     }
 }

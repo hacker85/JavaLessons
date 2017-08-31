@@ -12,6 +12,6 @@ public class ExtractingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        resp.getWriter().write("<form method='post' action='http://localhost:8080/extract/form'><input type='text' name='test'/></form>");
+        resp.getWriter().write("<form method='post' action='http://localhost:8080/rs/extract/form'><input type='text' name='test'/></form>");
     }
 }

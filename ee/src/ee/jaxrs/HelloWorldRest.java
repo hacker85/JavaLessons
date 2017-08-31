@@ -5,6 +5,7 @@ import javax.ws.rs.*;
 @Path("/rest")
 public class HelloWorldRest {
     @GET
+    @Produces("text/plain")
     public String sayHello() {
         return "Hello";
     }
