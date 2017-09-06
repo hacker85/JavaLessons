@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>hello world</title>
+</h:head>
+<h:body>
+    <h:form>
+        <!--<h:inputFile></h:inputFile>-->
+        <!--<h:inputHidden></h:inputHidden>-->
+        <!--<h:inputSecret></h:inputSecret>-->
+        <h:inputText value="#{printHello.input}"></h:inputText>
+        <!--<h:inputTextarea rows="20" cols="5"></h:inputTextarea>-->
+        <h:commandButton action="#{printHello.printHello}" value="some button"></h:commandButton>
+        <h:commandLink>some link</h:commandLink>
+        <h:button outcome="Commands.xhtml" value="some button"></h:button>
+        <h:link outcome="Commands.xhtml">some link</h:link><br></br>
+        <h:outputLabel>label </h:outputLabel>
+        <h:outputText value="Some text"></h:outputText>
+        <h:outputLink>link</h:outputLink>
+        <h:outputFormat value="Welcome {0}. You have bought {1} items">
+            <f:param value="Max" />
+            <f:param value="two" />
+        </h:outputFormat>
+
+        <h:selectOneMenu>
+            <f:selectItem itemLabel="History"/>
+            <f:selectItem itemLabel="Biography"/>
+        </h:selectOneMenu>
+        <h:selectBooleanCheckbox>
+            <f:selectItem itemLabel="History"/>
+        </h:selectBooleanCheckbox>
+        <h:selectManyCheckbox>
+            <f:selectItem itemLabel="History"/>
+            <f:selectItem itemLabel="Biography"/>
+        </h:selectManyCheckbox>
+        <h:selectManyListbox>
+            <f:selectItem itemLabel="History"/>
+            <f:selectItem itemLabel="Biography"/>
+        </h:selectManyListbox>
+        <h:selectOneListbox>
+            <f:selectItem itemLabel="History"/>
+            <f:selectItem itemLabel="Biography"/>
+        </h:selectOneListbox>
+        <h:selectOneRadio>
+            <f:selectItem itemLabel="History"/>
+            <f:selectItem itemLabel="Biography"/>
+        </h:selectOneRadio>
+        <h:panelGrid columns="3" border="1">
+            <f:facet name="header">
+                <h:outputText value="Header"/>
+            </f:facet>
+            <h:outputLabel value="One"/>
+            <h:outputLabel value="Two"/>
+            <h:outputLabel value="Three"/>
+            <h:outputLabel value="Four"/>
+            <h:outputLabel value="Five"/>
+            <h:outputLabel value="Six"/>
+            <f:facet name="footer">
+                <h:outputText value="Footer"/>
+            </f:facet>
+        </h:panelGrid>
+    </h:form>
+    <h:outputLabel>hello world</h:outputLabel>
+</h:body>
+</html>
