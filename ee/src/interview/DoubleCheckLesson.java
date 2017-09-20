@@ -19,5 +19,11 @@ public class DoubleCheckLesson {
             }
             return singleton;
         }
+        public Singleton getField() {
+            Singleton result = singleton;
+            if (result == null)
+                singleton = result = new Singleton();
+            return result;
+        }
     }
 }
