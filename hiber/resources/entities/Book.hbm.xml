@@ -1,0 +1,7 @@
+<hibernate-mapping>
+    <class entity-name="Book">
+        <id name="isbn" column="isbn" length="32" type="string"/>
+        <property name="title" not-null="true" length="50" type="string"/>
+        <property name="author" not-null="true" length="50" type="string"/>
+    </class>
+</hibernate-mapping>
