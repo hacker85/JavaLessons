@@ -1,20 +1,16 @@
 package com.max.web;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class WebAppInitializer {// extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
-//        return new Class[0];
-        return new Class<?>[] { RootConfig.class };
+        return null;//new Class<?>[] { MyWebConfig.class };
     }
 
     protected Class<?>[] getServletConfigClasses() {
-//        return new Class[0];
-        return new Class<?>[] { WebConfig.class };
+        return new Class<?>[] { MyWebConfig.class };
     }
 
     protected String[] getServletMappings() {
 //        return new String[0];
-        return new String[] { "/" };
+        return new String[] { "/web/*" };
     }
 }
