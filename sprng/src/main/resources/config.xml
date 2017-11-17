@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd" default-init-method="init" default-destroy-method="destroy">
+    <context:component-scan base-package="com.max" />
+    <!--<bean id="userRepo" class="com.max.impl.BestFm"/>-->
+    <!--<import resource="config2.xml"/>-->
+    <!--<bean id="toyota" class="com.max.impl.Toyota">-->
+        <!--<property name="radio" ref="bestFm"/>-->
+        <!--<property name="name" value="#{'hello world'}"/>-->
+          <!--&lt;!&ndash;init-method="afterPropertiesSet" destroy-method="destroy"&ndash;&gt;-->
+        <!--&lt;!&ndash;<lookup-method bean="bestFm" name="getRadio"/>&ndash;&gt;-->
+    <!--</bean>-->
+    <!--<context:property-placeholder location="my.properties"/>-->
+</beans>

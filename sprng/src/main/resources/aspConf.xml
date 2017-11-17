@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.max.aop2" />
+    <!--<aop:aspectj-autoproxy expose-proxy="true" />-->
+    <!--<bean id="transactionAspect" class="com.max.aop2.MyTransactionAspect" />-->
+
+    <aop:config>
+        <aop:aspect>
+            <aop:declare-parents
+            types-matching="com.max.aop2.MyRepo+"
+            implement-interface="com.max.aop2.NewInteface"
+            default-impl="com.max.aop2.AdditionalJob"
+            />
+        </aop:aspect>
+    </aop:config>
+
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="transactionAspect">-->
+            <!--<aop:pointcut id="myPintCut" expression="execution(* com.max.aop2.MyUserRepo.withParams(String)) and args(name)"/>-->
+
+            <!--<aop:before pointcut-ref="myPintCut" method="beforeMethodWithParams"/>-->
+
+            <!--&lt;!&ndash;<aop:around pointcut-ref="myPintCut" method="aroundTransaction"/>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<aop:before pointcut-ref="myPintCut" method="beginTransaction"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after pointcut-ref="myPintCut" method="after"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-returning pointcut-ref="myPintCut" method="commitTransaction"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-throwing pointcut-ref="myPintCut" method="rollback"/>&ndash;&gt;-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+    <!--<bean id="transactionAspect" class="com.max.aop.TransactionAspect" />-->
+    <!--<bean id="transactionAround" class="com.max.aop.TransactionAround" />-->
+    <!--<bean class="com.max.aop.UserRepoIntroducer" />-->
+
+    <!--<aop:config>-->
+        <!--<aop:aspect>-->
+            <!--<aop:declare-parents-->
+                    <!--types-matching="com.max.aop.Repo+"-->
+                    <!--implement-interface="com.max.aop.Encoreable"-->
+                    <!--default-impl="com.max.aop.DefaultEncoreable"-->
+            <!--/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="transactionAspect">-->
+            <!--&lt;!&ndash;<aop:pointcut id="getInfo" expression="execution(* com.max.aop.Repo.getInfo())"/>&ndash;&gt;-->
+            <!--<aop:pointcut id="printName" expression="execution(* com.max.aop.UserRepository.printName(String)) and args(name)"/>-->
+
+            <!--<aop:before pointcut-ref="printName" method="printNameBefore"/>-->
+
+            <!--&lt;!&ndash;<aop:around pointcut-ref="getInfo" method="watchPerformance"/>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<aop:before pointcut-ref="getInfo" method="before"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after pointcut-ref="getInfo" method="after"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-returning pointcut-ref="getInfo" method="afterReturn"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-throwing pointcut-ref="getInfo" method="afterThrowing"/>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<aop:before pointcut="execution(* com.max.aop.Repo.getInfo())" method="before"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after pointcut="execution(* com.max.aop.Repo.getInfo())" method="after"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-returning pointcut="execution(* com.max.aop.Repo.getInfo())" method="afterReturn"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-throwing pointcut="execution(* com.max.aop.Repo.getInfo())" method="afterThrowing"/>&ndash;&gt;-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+</beans>
