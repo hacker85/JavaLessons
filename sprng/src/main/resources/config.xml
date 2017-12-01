@@ -11,7 +11,7 @@
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd" default-init-method="init" default-destroy-method="destroy">
-    <context:component-scan base-package="com.max" />
+    <!--<context:component-scan base-package="com.max" />-->
     <!--<bean id="userRepo" class="com.max.impl.BestFm"/>-->
     <!--<import resource="config2.xml"/>-->
     <!--<bean id="toyota" class="com.max.impl.Toyota">-->

@@ -50,9 +50,9 @@ public class Toyota implements Car {
 //    @Value("#{radio.name matches '[a-z]*'}")
 //    @Value("#{radio.name matches '[0-9]*'}")
 //    @Value("#{toyota.list[0]}")
-    @Value("#{'This is a test'[3]}")
+//    @Value("#{'This is a test'[3]}")
 //    @Value("#{radio.name}")
-//    @Value("Max")
+    @Value("Max")
     String name;
 
     public void setRadio(Radio radio) {

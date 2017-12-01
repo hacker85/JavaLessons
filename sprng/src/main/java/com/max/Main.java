@@ -1,12 +1,46 @@
 package com.max;
 
-import com.max.impl.Toyota;
-import com.max.interfaces.Car;
+import com.max.config.JmxConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        ApplicationContext context = new AnnotationConfigApplicationContext(JmxConfig.class);
+
+//        StudentAutoRepository bean = context.getBean(StudentAutoRepository.class);
+//        Student max = bean.getStudentByName("Max");
+//        System.out.println(max.getId());
+//        bean.save(new Student("Max"));
+//        StudentRepo bean = context.getBean(StudentRepo.class);
+//        bean.saveStudent();
+//        CarRepo bean = context.getBean(CarRepo.class);
+//        bean.saveCar();
+//        UserAutoRepository bean = context.getBean(UserAutoRepository.class);
+//        User byId = bean.getById(3);
+//        System.out.println(byId.getName());
+//        User user = bean.getByName("Mike");
+//        System.out.println(user.getId());
+//        List<User> users = bean.findAll();
+//        System.out.println(users.size());
+
+//        UserRepo bean = context.getBean(UserRepo.class);
+//        bean.saveUser(new User("Max"));
+//        BookAutoRepository bean = context.getBean(BookAutoRepository.class);
+//        bean.save(new Book("new"));
+//        Book max = bean.findByNames("Max");
+//        Book max = bean.getById(4);
+//        System.out.println(max.getName());
+//        System.out.println(max.getId());
+//        UserRepo bean = context.getBean(UserRepo.class);
+//        bean.saveUser(new User("Max"));
+//        Repo bean = context.getBean(BookAutoRepository.class);
+//        bean.createTable();
+
+
+//        ApplicationContext context = new AnnotationConfigApplicationContext(DbConfig.class);
+//        Car bean = context.getBean(Toyota.class);
+//        bean.drive();
 //        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 //        context.getEnvironment().setActiveProfiles("dev");
 //        context.register(Config.class);
@@ -19,10 +53,7 @@ public class Main {
 //        context.getEnvironment().setActiveProfiles("dev");
 //        context.load("classpath*:config.xml");
 //        context.refresh();
-//        ApplicationContext context = new AnnotationConfigApplicationContext(com.max.AppConfig.class);
-        ApplicationContext context = new AnnotationConfigApplicationContext(com.max.Config.class);
-        Car bean = context.getBean(Toyota.class);
-        bean.drive();
+//        ApplicationContext context = new AnnotationConfigApplicationContext(com.max.config.AppConfig.class);
 
 //        ExpressionParser parser = new SpelExpressionParser();
 //        Expression exp = parser.parseExpression("'Hello World'");

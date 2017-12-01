@@ -9,16 +9,16 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.max.aop2" />
+    <!--<context:component-scan base-package="com.max.aop" />-->
     <!--<aop:aspectj-autoproxy expose-proxy="true" />-->
     <!--<bean id="transactionAspect" class="com.max.aop2.MyTransactionAspect" />-->
 
     <aop:config>
         <aop:aspect>
             <aop:declare-parents
-            types-matching="com.max.aop2.MyRepo+"
-            implement-interface="com.max.aop2.NewInteface"
-            default-impl="com.max.aop2.AdditionalJob"
+            types-matching="com.max.aop.MyRepo+"
+            implement-interface="com.max.aop.NewInteface"
+            default-impl="com.max.aop.AdditionalJob"
             />
         </aop:aspect>
     </aop:config>

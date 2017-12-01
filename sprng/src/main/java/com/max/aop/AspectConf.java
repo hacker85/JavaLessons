@@ -1,13 +1,10 @@
 package com.max.aop;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@Configuration
-@EnableAspectJAutoProxy(exposeProxy = true)
-@ComponentScan
+//@Configuration
+//@EnableAspectJAutoProxy(exposeProxy = true)
+//@ComponentScan
 public class AspectConf {
     @Bean
     TransactionAspect getTransaction() {

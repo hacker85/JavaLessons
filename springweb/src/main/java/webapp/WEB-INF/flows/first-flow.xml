@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd"
+start-state="first">
+    <var name="userRepo" class="com.max.web.repo.UserRepo"/>
+    <input name="i" type="int"/>
+    <on-start>
+        <evaluate expression="5" result="flowScope.i"/>
+    </on-start>
+    <view-state id="first" view="first">
+        <transition on="action" to="myAction"/>
+    </view-state>
+    <action-state id="myAction">
+        <evaluate expression="myFlowBean.printI(flowScope.i)"/>
+        <transition to="decision"/>
+    </action-state>
+    <!--<subflow-state id="sub" subflow="helloFlow">-->
+        <!--<transition on="endState" to="second"/>-->
+    <!--</subflow-state>-->
+    <decision-state id="decision" >
+        <if test="myFlowBean.trueOrFalse()" then="second" else="third"/>
+    </decision-state>
+    <view-state id="second" view="second"/>
+    <view-state id="third" view="third"/>
+    <!--<end-state id="second"/>-->
+    <!--<global-transitions>-->
+        <!--<transition on="action" to="second"/>-->
+    <!--</global-transitions>-->
+</flow>

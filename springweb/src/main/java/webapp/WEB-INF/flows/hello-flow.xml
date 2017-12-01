@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+start-state="start">
+    <!--<view-state id="activation" view="activation">-->
+        <!--<transition on="activate" to="success"/>-->
+        <!--<transition on="cancel" to="failure"/>-->
+    <!--</view-state>-->
+    <!--<view-state id="success"/>-->
+    <!--<view-state id="failure" />-->
+
+    <!--<var name="i" class="java.lang.Integer"/>-->
+    <!--<input name="myId" type="int" value="webFlowActions.getI()" required="true"/>-->
+    <var name="userRepo" class="com.max.web.repo.UserRepo"/>
+    <input name="myId" type="int" />
+
+    <on-start>
+        <evaluate expression="5" result="flowScope.myId" />
+    </on-start>
+
+    <view-state id="start">
+        <transition on="action" to="action"/>
+    </view-state>
+
+    <!--<var name="i" class="java.lang.Integer"/>-->
+    <!--<set name="flowScope.i" value="5" />-->
+
+    <action-state id="action">
+        <!--<evaluate expression="webFlowActions.printHello()" />-->
+        <!--<evaluate expression="webFlowActions.printI(myId)" />-->
+        <evaluate expression="webFlowActions.printUser(userRepo.getUser())" />
+        <transition to="decision" />
+    </action-state>
+
+    <decision-state id="decision">
+        <if test="webFlowActions.isAvailable()"
+            then="end"
+            else="endState" />
+    </decision-state>
+
+    <!--<subflow-state id="sub" subflow="subview">-->
+        <!--<input name="name" value="Max"/>-->
+        <!--<transition on="next" to="end" />-->
+    <!--</subflow-state>-->
+
+    <view-state id="end" />
+
+    <end-state id="endState">
+        <!--<output name="flowScope.myId" value="webFlowActions.getI()" />-->
+    </end-state>
+
+    <global-transitions>
+        <transition on="cancel" to="endState" />
+    </global-transitions>
+
+    <on-end>
+        <evaluate expression="webFlowActions.printEnd()" />
+    </on-end>
+</flow>

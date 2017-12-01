@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd"
+       default-init-method="init" default-destroy-method="destroy">
+    <!--<context:component-scan base-package="com.max.web.controllers" />-->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/views/"
+          p:suffix=".jsp" />
+
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"-->
+          <!--p:driverClassName="org.h2.Driver"-->
+          <!--p:url="jdbc:h2:tcp://localhost/~/spitter"-->
+          <!--p:username="sa"-->
+          <!--p:password=""-->
+          <!--p:initialSize="5"-->
+          <!--p:maxActive="10" />-->
+
+    <!--<jee:jndi-lookup id="dataSource"-->
+                     <!--jndi-name="/jdbc/SpitterDS"-->
+                     <!--resource-ref="true" />-->
+
+    <!--<bean id="dataSource"-->
+          <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource"-->
+          <!--p:driverClassName="org.h2.Driver"-->
+          <!--p:url="jdbc:h2:tcp://localhost/~/spitter"-->
+          <!--p:username="sa"-->
+          <!--p:password="" />-->
+
+    <!--<jdbc:embedded-database id="dataSource" type="H2">-->
+        <!--<jdbc:script location="com/habuma/spitter/db/jdbc/schema.sql"/>-->
+        <!--<jdbc:script location="com/habuma/spitter/db/jdbc/test-data.sql"/>-->
+    <!--</jdbc:embedded-database>-->
+
+    <!--<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">-->
+        <!--<property name="flowRegistry" ref="activationFlowRegistry"/>-->
+    <!--</bean>-->
+
+    <!--<flow:flow-builder-services id="flowBuilderServices" view-factory-creator="mvcViewFactoryCreator"/>-->
+
+    <!--<bean id="mvcViewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">-->
+        <!--<property name="viewResolvers" ref="jspViewResolver"/>-->
+    <!--</bean>-->
+
+    <!--<flow:flow-registry id="activationFlowRegistry" flow-builder-services="flowBuilderServices">-->
+        <!--<flow:flow-location id="activationFlow" path="/WEB-INF/flhello-flow.xml.xml"/>-->
+    <!--</flow:flow-registry>-->
+
+    <!--<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">-->
+        <!--<property name="flowExecutor" ref="activationFlowExecutor"/>-->
+    <!--</bean>-->
+    <!--<flow:flow-executor id="activationFlowExecutor" flow-registry="activationFlowRegistry"/>-->
+
+</beans>
